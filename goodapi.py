@@ -15,6 +15,8 @@ def process():
         return jsonify(book)
     except Exception as e:
         return "Image processing could not complete:\n"+ str(e)
+
+
 @app.route('/home', methods=['POST','GET'])  
 def process():
     try: 
@@ -24,5 +26,16 @@ def process():
     except Exception as e:
 
         return "There was an error somewhere:\n"+ str(e)
+
+
+@app.route('/news', methods=['POST','GET'])  
+def process():
+    try: 
+        book = {"newid":"Hello great learning here"}
+
+        return jsonify(book)
+    except Exception as e:
+        return "Image processing could not complete:\n"+ str(e)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
